@@ -1,0 +1,19 @@
+time_shift:
+  enabled: true
+  max_seconds: 0.2
+  max_samples: 6400
+white_noise:
+  enabled: true
+  snr_db: 15
+spec_augment:
+  enabled: true
+  freq_mask: 30
+  time_mask: 40
+time_stretch:
+  enabled: true
+  min_rate: 0.8
+  max_rate: 1.2
+pitch_shift:
+  enabled: true
+  min_semitones: -2
+  max_semitones: 2

@@ -1,0 +1,9 @@
+sample_rate: 32000
+duration_seconds: 5
+target_samples: 160000
+short_audio_policy: loop_pad
+long_audio_policy:
+  train: random_crop
+  validation_test: center_crop
+normalization: peak_to_minus1_plus1
+random_seed: 2026

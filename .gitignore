@@ -1,0 +1,52 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# ===== 前端依赖与构建产物 =====
+src/frontend/node_modules/
+src/frontend/dist/
+
+# ===== 原始数据集（约 15GB，绝不入库）=====
+data/birdclef-2026.zip
+data/raw/
+data/birdclef-2026/
+data/train_audio/
+data/train_soundscapes/
+data/test_soundscapes/
+data/processed_audio/
+features/
+features/**/*.npy
+
+# ===== 深度模型权重（约 240MB，后端推理不依赖；保留演示用 joblib）=====
+models/*.pth
+models/*.pt
+models/*.onnx
+
+# ===== 训练输出、日志与中间产物（不入库）=====
+outputs/
+tmp/
+
+# ===== 报告 / PPT / 辅助脚本 / 过程文档（作为单独材料提交，不入代码库）=====
+report/
+ppt/
+scripts/
+大作业Plan/
+设计参考/
+Task.md
+SUBMISSION_CHECKLIST.md
+README_SUBMISSION.md
+录制脚本_系统演示视频.md
+提交_GitHub代码链接.txt
+语音识别技术大作业2026.doc
+data/README_KAGGLE_ACCESS.md
+run_after_kaggle_acceptance.ps1
+src/data/kaggle_access_probe.py
+
+# ===== 旧草稿 =====
+**/archive_legacy_do_not_submit/
+
+# ===== 环境 =====
+.env
+.venv/
+venv/
