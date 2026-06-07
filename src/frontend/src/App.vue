@@ -51,6 +51,7 @@ const prediction = ref(null)
 const predicting = ref(false)
 const errorMessage = ref('')
 const historyRows = ref([])
+const lastFile = ref(null)
 
 const models = computed(() => modelRows.value.map((item) => ({ value: item.id, label: item.name })))
 const backendReady = computed(() => modelRows.value.length > 0 && Boolean(selectedModel.value))
@@ -65,6 +66,12 @@ function closeSettings() {
 }
 
 async function handleFileSelected(file) {
+  lastFile.value = file
+  await runPrediction(file)
+}
+
+async function runPrediction(file) {
+  if (!file) return
   if (!backendReady.value) {
     errorMessage.value = '后端或真实模型未就绪，请先启动后端并确认模型文件存在'
     return
@@ -82,6 +89,12 @@ async function handleFileSelected(file) {
     predicting.value = false
   }
 }
+
+watch(selectedModel, () => {
+  if (lastFile.value && backendReady.value) {
+    runPrediction(lastFile.value)
+  }
+})
 
 onMounted(async () => {
   historyRows.value = loadHistory()
