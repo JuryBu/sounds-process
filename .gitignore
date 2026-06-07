@@ -15,8 +15,8 @@ data/train_audio/
 data/train_soundscapes/
 data/test_soundscapes/
 data/processed_audio/
-features/
-features/**/*.npy
+/features/
+/features/**/*.npy
 
 # ===== 深度模型权重（约 240MB，后端推理不依赖；保留演示用 joblib）=====
 models/*.pth
